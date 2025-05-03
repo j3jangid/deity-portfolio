@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import LoginPage from './LoginPage';
+import Layout from './Layout';
+
+const code = uuidv4()
 
 function App() {
+  const [userPassword, setUserPassword] = useState()
+
+  useEffect(() => {
+    localStorage.setItem('securityCode', code);
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {
+        userPassword === code ?
+          <Layout />
+          :
+          <LoginPage
+            userPassword={userPassword}
+            setUserPassword={setUserPassword}
+          />
+      }
     </div>
   );
 }
