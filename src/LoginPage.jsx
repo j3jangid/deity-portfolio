@@ -6,6 +6,7 @@ function LoginPage({ userPassword, setUserPassword }) {
     return (
         <div className='d-flex justify-content-center align-items-center vh-100'>
             <Paper elevation={0} className='p-5' style={{ backgroundColor: 'whitesmoke', border: '1px solid black', borderRadius: 0 }} >
+                <h2>Check Local Storage</h2>
                 <div className='d-flex align-items-center gap-2'>
                     <input
                         type="text"

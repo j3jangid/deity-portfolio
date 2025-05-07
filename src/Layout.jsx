@@ -1,25 +1,28 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Navbar from './NavBar/Navbar'
-import Home from './Home/Home'
-import ResumePage from './Resume/ResumePage'
-import ContactPage from './Contact/ContactPage'
-import ProjectsPage from './Projects/ProjectsPage'
+
+const Navbar = lazy(() => import('./NavBar/Navbar'))
+const Home = lazy(() => import('./Home/Home'))
+const ResumePage = lazy(() => import('./Resume/ResumePage'))
+const ContactPage = lazy(() => import('./Contact/ContactPage'))
+const ProjectsPage = lazy(() => import('./Projects/ProjectsPage'))
 
 function Layout() {
     return (
         <div>
-            <Navbar />
-            <div>
-                <Routes>
-                    <Route path="/" Component={Home} />
-                    <Route path="#" Component={Home} />
-                    <Route path="*" Component={Home} />
-                    <Route path="/projects" Component={ProjectsPage} />
-                    <Route path="/resume" Component={ResumePage} />
-                    <Route path="/contact" Component={ContactPage} />
-                </Routes>
-            </div>
+            <Suspense fallback={<div>Loading....</div>}>
+                <Navbar />
+                <div>
+                    <Routes>
+                        <Route path="/" Component={Home} />
+                        <Route path="#" Component={Home} />
+                        <Route path="*" Component={Home} />
+                        <Route path="/projects" Component={ProjectsPage} />
+                        <Route path="/resume" Component={ResumePage} />
+                        <Route path="/contact" Component={ContactPage} />
+                    </Routes>
+                </div>
+            </Suspense>
         </div>
     )
 }
