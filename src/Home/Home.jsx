@@ -111,30 +111,30 @@ function Home() {
                 Node.JS
               </p>
             </div>
-            <div className='d-flex flex-column justify-content-center align-items-center'>
+            {/* <div className='d-flex flex-column justify-content-center align-items-center'>
               <img className='img-fluid skillImg' src={sqlImg} alt="sql" />
               <p className='mt-2 textColor'>
                 SQL
               </p>
-            </div>
-            <div className='d-flex flex-column justify-content-center align-items-center'>
+            </div> */}
+            {/* <div className='d-flex flex-column justify-content-center align-items-center'>
               <img className='img-fluid skillImg' src={bootstrapImg} alt="bootstrap" />
               <p className='mt-2 textColor'>
                 Bootstrap
               </p>
-            </div>
+            </div> */}
             <div className='d-flex flex-column justify-content-center align-items-center'>
               <img className='img-fluid skillImg' src={javaImg} alt="java" />
               <p className='mt-2 textColor'>
                 Java
               </p>
             </div>
-            <div className='d-flex flex-column justify-content-center align-items-center'>
+            {/* <div className='d-flex flex-column justify-content-center align-items-center'>
               <img className='img-fluid skillImg' src={gitImg} alt="git" />
               <p className='mt-2 textColor'>
                 Git
               </p>
-            </div>
+            </div> */}
 
           </div>
         </Paper>
